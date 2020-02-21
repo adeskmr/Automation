@@ -63,12 +63,10 @@ def scheduleClick(url):
         item_list.append((date_time_obj.date(), x))
 
 def check(items, key):
-    # print(item_list)
     for item in items:
         if item[0] == key:
-            return item[1]
-        else:
-            return "you don't work today"
+            return '\n'.join(item[1])
+    return "you don't work today"
 
 def sendMessage(message):
     work = "Your schedule for today is " + message
@@ -82,7 +80,7 @@ def sendMessage(message):
 inside(url1, usernameID, passwordID, submitID)
 time.sleep(5)
 scheduleClick(schedule)
-work = (check(item_list, datetime.datetime.now()))
+work = (check(item_list, datetime.date.today()))
 sendMessage(work)
 
 
