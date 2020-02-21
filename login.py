@@ -79,8 +79,6 @@ def sendMessage(message):
                      to= os.environ['NUMBER']
                  )
 
-    print(message.sid)
-
 inside(url1, usernameID, passwordID, submitID)
 time.sleep(5)
 scheduleClick(schedule)
